@@ -1,6 +1,6 @@
 // This code has been written by NMDSoft
 
-package com.nmd-soft.app;
+package com.nmd_soft.app;
 
 import java.io.*;
 import java.util.*;

@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
 Created-By: NMDSoft
-Main-Class: com.nmd-softapp.KMeans
+Main-Class: com.nmd_soft.app.KMeans
 Class-Path: lib/mtj-0.9.12.jar lib/netlib-java-0.9.1.jar lib/arpack_combined_all.jar
