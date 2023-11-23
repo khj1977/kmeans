@@ -1,7 +1,3 @@
-from scipy import sparse
-from scipy import linalg
-from scipy import matrix
-
 import math
 import sys
 import pickle
@@ -11,7 +7,7 @@ import copy
 
 class KMeans:
     # numCluster: int
-    def __init__(self, numCluster):
+    def __init__(self, dataPath, dimData, numCluster):
         # uMat = numpy.ndarray(shape=(maxWordID, numEig), dtype=float)
         # uMatT = numpy.ndarray(shape=(numEig, maxWordID), dtype=float)
 
@@ -156,6 +152,16 @@ class KMeans:
         return norm
     
     def xmain(self):
-        pass
+        if (len(sys.argv) != 4):
+            print("usage: python kmeans.py data.tsv dim-data num-cluster")
+            sys.exit()
+
+        dataPath = sys.arg[1]
+        dimData = int(sys.arg[2])
+        numCluster = int(sys.argv[3])
+
+        engine = KMeans(dataPath, dimData, numCluster)
+
+        engine.calcCluster()
         
 	
