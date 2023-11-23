@@ -96,8 +96,30 @@ class KMeans:
         return False
 
 
-    def calcClusterCentre(self):
-        pass
+    def calcClusterCentre(self, clusterIdx):
+        if not (str(clusterIdx) in self.clusterMap):
+            return
+        
+        dataIdxs = self.clusterMap[str(clusterIdx)]
+
+        centre = numpy.arange(self.dimData).reshape(1, self.dimData)
+        for i in range(self.dimData):
+            centre[i] = 0
+
+        numVec = 0
+
+        for v in dataIdxs:
+            dataIdx = v
+            data = self.dataSet[dataIdx]
+
+            centre = centre.add(data)
+
+            numVec = numVec + 1
+
+        factor = 1.0 / numpy.linalg.norm(centre)
+        centre = factor * centre
+
+        self.clusterCentres[clusterIdx] = centre
         
     def pickClusterRandomly(self):
         # HashMap<String, ArrayList<Integer>>();
