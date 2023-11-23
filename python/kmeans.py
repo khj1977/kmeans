@@ -6,6 +6,21 @@ import random
 import copy
 
 class KMeans:
+
+    ## cluster centre
+    # protected DenseVector[] clusterCentres;
+    ## protected ArrayList<DenseVector> dataSet;
+    # protected DenseVector[] dataSet;
+    # protected ArrayList<String> dataLabel;
+    # protected int numClusters;
+    # protected int dimData;
+
+    ## The index to cluster centre of data vector. val is idx of cluster
+    # protected Integer[] belongingClusters;
+    
+    ## key: idx of cluster as String. val: list of idx of dataSet
+    # protected HashMap<String, ArrayList<Integer>> clusterMap;
+
     # numCluster: int
     def __init__(self, dataPath, dimData, numCluster):
         # uMat = numpy.ndarray(shape=(maxWordID, numEig), dtype=float)
