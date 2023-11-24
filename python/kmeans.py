@@ -28,7 +28,44 @@ class KMeans:
 
         self.clusterCentres = numpy.ndarray(shape=(numCluster, 1), dtype = float)
 
-        pass
+        tmpDataSet = []
+        self.numClusters = numCluster
+        self.dimData = dimData
+        self.dataLabel = []
+
+        for i in range(numCluster):
+            self.clusterCentres[i] = numpy.ndarray(shape=(dimData, 1), dtype=float)
+        
+        idxDataVec = 0
+        file = open(dataPath, "r")
+        for line in file:
+            line = line.replace("\n", "")
+            splitted = line.split("\t")
+
+            dataName = splitted[0]
+            self.dataLabel.append(dataName)
+            n = len(splitted)
+            dataVector = numpy.ndarray(shape=(dimData, 1), dtype=float)
+            for i in range(dimData):
+                dataVector[i] = 0.0
+            
+            k = 0
+            j = 2
+            while True:
+                if (j >= n):
+                    break
+
+                idx = j - 1
+                dataVector[k] = float(splitted[j])
+
+            tmpDataSet.append(dataVector)
+
+            idxDataVec = idxDataVec + 1
+
+            self.dataSet = copy.copy(tmpDataSet)
+            self.belongingClusters = []
+
+        
     
     def calcCluster(self):
         self.pickClusterRandomly()
