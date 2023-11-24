@@ -57,6 +57,9 @@ class KMeans:
 
                 idx = j - 1
                 dataVector[k] = float(splitted[j])
+                
+                j = j + 1
+                k = k + 1
 
             tmpDataSet.append(dataVector)
 
