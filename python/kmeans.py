@@ -206,17 +206,5 @@ class KMeans:
 
         return norm
     
-    def xmain(self):
-        if (len(sys.argv) != 4):
-            print("usage: python kmeans.py data.tsv dim-data num-cluster")
-            sys.exit()
-
-        dataPath = sys.arg[1]
-        dimData = int(sys.arg[2])
-        numCluster = int(sys.argv[3])
-
-        engine = KMeans(dataPath, dimData, numCluster)
-
-        engine.calcCluster()
         
 	
